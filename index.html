@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/077b97d0fa.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+   
+</head>
+<body>
+   <div id="header">
+    <div class="container">
+        <nav>
+            <h1 class="logo">Sam<span>wumi<span class="dot">.</span></span></h1>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Software Engineer</p>
+             <h1>Hi, I am <span>Alade</span><br>Samuel from Nigeria</h1>
+        </div>
+    </div>
+   </div> 
+ <!-- .........About........ -->
+    <div id="about-me">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="https://samwumi-d4576.web.app/images/about-pic.png" alt="">
+            </div>
+            <div class="about-col-2">
+               <h1 class="sub-title">About me</h1>
+               <p>
+
+                Hello, I'm Alade Samuel, a passionate UI/UX designer and web developer with 4 years of professional experience. I have a strong love for creating intuitive and visually appealing user interfaces that seamlessly blend aesthetics with functionality.
+                
+                With a keen eye for detail and a deep understanding of user-centered design principles, I strive to deliver engaging and delightful user experiences. From wireframing and prototyping to crafting pixel-perfect designs, I enjoy every step of the design process.
+                
+                In addition to my design skills, I am proficient in front-end web development, bringing my designs to life using HTML, CSS, and JavaScript. I have hands-on experience with modern frameworks and libraries like React, ensuring responsive and interactive web applications.
+                
+                Collaboration is at the heart of my work philosophy. I thrive in cross-functional teams, collaborating closely with developers, product managers, and stakeholders to create solutions that align with business goals and user needs.
+                
+                My goal is to create meaningful and impactful digital experiences that leave a lasting impression on users. Whether it's a website, web application, or mobile app, I'm dedicated to crafting elegant designs and efficient code that enhance usability and drive results.
+                
+                Let's work together to bring your ideas to life and create exceptional digital experiences that make a difference."</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        <li><span>Digital Marketing</span><br>Helping businesses to have effective online presence</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2022 - Current </span><br>Web designer and developer at Digital Career Academy, Galway, Ireland</li>
+                        <li><span>2022 - Current </span><br>Web designer and developer at SCMAS</li>
+                        <li><span>2021 - 2022 </span><br>Web Developer at Delsmy Academy</li>
+                        <li><span>2019 - 2022</span><br>Digital Marketing Consultant at Samadex Nigeria Limited</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2019</span><br>UI/UX at Side Hustle</li>
+                        <li><span>2021</span><br>Web development training at Delsmy Academy</li>
+                        <li><span>2017</span><br>B.Sc at Obafemi Awolowo University</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   <!-- ..........Services.............. -->
+   <div id="services">
+    <h1 class="sub-title">My Services</h1>
+    <div class="services-list">
+        <div>
+            <i class="fa-solid fa-code"></i>
+            <h1>Web Development</h1>
+            <p>Embark on your web development journey with me. I'm a passionate web developer specializing in crafting exceptional websites that make an impact. 
+                
+                Explore my budding portfolio, showcasing my skills in creating customized solutions that reflect your unique brand identity. From stunning design to seamless functionality, I'll bring your vision to life.
+                
+                Let's collaborate on your upcoming project and kickstart your online presence. Join me on this exciting web development adventure. Visit my portfolio today!</p>
+                <a href="#">Learn more</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-crop"></i>
+            <h1>UI/UX</h1>
+            <p> Welcome to my UI/UX design portfolio, where I bring creativity and user-centric design together to deliver exceptional digital experiences. 
+                
+                Discover my passion for crafting intuitive and visually captivating interfaces that leave a lasting impression. From wireframes to interactive prototypes, I specialize in creating seamless user journeys that engage and delight.
+                
+                Browse through my evolving portfolio, showcasing my expertise in understanding user needs and translating them into elegant design solutions. Together, we can create user experiences that elevate your brand and drive meaningful interactions.
+                zd
+                Let's collaborate on your next UI/UX project and embark on a journey of innovative design. Join me in shaping the future of digital experiences. Explore my portfolio today!</p>
+                <a href="#">Learn more</a>
+        </div>
+        <div>
+            <i class="fa-solid fa-envelopes-bulk"></i>
+            <h1>Digital Marketing</h1>
+            <p>Step into the world of digital marketing with me as your guide. I'm a dedicated digital marketer, ready to help your brand thrive in the online landscape.
+                
+                Explore my portfolio and discover how I've successfully executed data-driven marketing strategies to drive growth and boost brand visibility. From social media campaigns to SEO optimization, I specialize in leveraging digital channels to reach and engage your target audience.
+                
+                With a focus on measurable results, I'll tailor customized marketing solutions to suit your unique business objectives. Let's collaborate on your next digital marketing venture and unlock new opportunities for your brand.
+                
+                Don't miss out on the chance to elevate your online presence. Visit my portfolio today and let's shape your digital success story together!</p>
+                <a href="#">Learn more</a>
+        </div>
+    </div>
+   </div>
+
+   <!-- ........portfolio.......... -->
+
+   <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/blog.jpg" alt="">
+                <div class="layer">
+                    <h3>Blog</h3>
+                    <p>A blog website aimed at educating readers on Bitcoin</p>
+                    <a href="https://satoshisjournal.com/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/comic.jpg" alt="">
+                <div class="layer">
+                    <h3>Cryptocomics</h3>
+                    <p>A cryptocomics lab website aimed at teaching people the cryptocurrency business through comic article and images</p>
+                    <a href="http://cryptocomicslab.com" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/images/landing.jpg" alt="">
+                <div class="layer">
+                    <h3></h3>
+                    <p>A home service business website that highlights various services the business offers and their pricing</p>
+                    <a href="https://reviveservices.ca/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="/images/academy.jpg" alt="">
+                <div class="layer">
+                    <h3></h3>
+                    <p>Online Education websites that teaches in-demand tech skills across 3 continents</p>
+                    <a href="https://iamyinka.github.io/wwwdca/frontend/templates/refactored/about-us.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="a" class="btn">See more</a>
+    </div>
+   </div>
+
+   <!-- ..........contact............. -->
+   <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-regular fa-paper-plane"></i>samwumi91@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>08039281641</p>
+                <div class="social-icons">
+                   <a href="https://www.facebook.com/SamWumiDigitals" target="_blank"><i class="fa-brands fa-facebook"></i></a> 
+                    <a href="http://www.linkedin.com/in/adewumi-alade" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="#" class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="text" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright &copy; Samwumi. Made with <i class="fa-solid fa-heart"></i> by Samwumi Digitals</p>
+    </div>
+   </div>
+</body>
+</html>
+
+                     
+
