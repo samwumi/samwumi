@@ -401,11 +401,14 @@ nav .fa-solid{
     #header{
         background-position: left center;
         background-size:contain;
+        
     }
 
+
     .header-text{
-        margin-top: 105%;
+        margin-top: 10%;
         font-size: 16px;
+        
 
     }
 
@@ -418,6 +421,8 @@ nav .fa-solid{
         display: block;
         font-size: 25px;
     }
+
+
 
     nav ul{
         background: #ff004f;
@@ -451,8 +456,13 @@ nav .fa-solid{
         flex-basis: 100%;
     }
 
+    #about-me{
+        margin-top: -200px;
+    }
+
     .about-col-1 img{
-        height: fit-content;
+        /* height: fit-content; */
+        display: none;
     }
 
     .about-col-1{
