@@ -42,3 +42,29 @@ function closemenu(){
       })
       .catch(error => console.error('Error!', error.message))
   })
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var initialVisibleItems = 3;  
+    var items = document.querySelectorAll('.work');
+    var seeMoreButton = document.getElementById('see-more');
+
+    // Display the first 'initialVisibleItems' items initially
+    items.forEach(function (item, index) {
+        if (index < initialVisibleItems) {
+            item.style.display = 'block';
+        }
+    });
+
+    seeMoreButton.addEventListener('click', function (e) {
+        e.preventDefault()
+        items.forEach(function (item, index) {
+            if (index >= initialVisibleItems) {
+                item.style.display = (item.style.display === 'none' || item.style.display === '') ? 'block' : 'none';
+            }
+        });
+
+        seeMoreButton.textContent = (seeMoreButton.textContent === 'See Less') ? 'See More' : 'See Less';
+
+    });
+});
