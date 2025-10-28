@@ -48,27 +48,54 @@
 <body class="bg-slate-50 text-slate-900 dark:bg-neutral-950 dark:text-white antialiased font-sans transition-colors duration-300 overflow-x-hidden max-w-full" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
    <header id="header" class="w-full min-h-screen bg-no-repeat bg-contain bg-[position:70%_center] bg-[url('https://samwumi-d4576.web.app/images/myimage.png')] scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <nav class="flex items-center justify-between sticky top-0 z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-950/60 py-4 transition-colors max-w-full overflow-x-hidden">
-            <a href="#header" class="inline-flex items-center gap-2 text-xl sm:text-2xl font-extrabold tracking-tight whitespace-nowrap">
+        <nav class="flex items-center justify-between sticky top-0 z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-950/60 py-4 transition-colors max-w-full">
+            <a href="#header" class="inline-flex items-center gap-2 text-xl sm:text-2xl font-extrabold tracking-tight whitespace-nowrap z-50">
               <span class="text-slate-900 dark:text-white">Sam</span><span class="text-brand">wumi</span><span class="text-slate-900 dark:text-white">.</span>
             </a>
-            <div id="menu-overlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 sm:hidden" onclick="closemenu()"></div>
-            <ul id="sidemenu" class="fixed sm:static top-0 right-0 h-screen sm:h-auto w-80 sm:w-auto bg-white dark:bg-neutral-900 sm:bg-transparent px-8 py-16 sm:p-0 flex sm:flex-row flex-col gap-8 sm:gap-8 justify-start items-start sm:items-center translate-x-full sm:translate-x-0 transition-transform duration-300 z-50 max-h-screen overflow-y-auto">
-                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#header" onclick="closemenu()">Home</a></li>
-                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#about-me" onclick="closemenu()">About</a></li>
-                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#services" onclick="closemenu()">Services</a></li>
-                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#portfolio" onclick="closemenu()">Portfolio</a></li>
-                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#contact" onclick="closemenu()">Contact</a></li>
-                <div class="flex items-center gap-4 mt-8 sm:mt-0 w-full sm:w-auto justify-start sm:justify-center">
-                  <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition" aria-label="Toggle theme" aria-pressed="false">
-                    <i id="icon-sun" class="fa-solid fa-sun"></i>
-                    <i id="icon-moon" class="fa-solid fa-moon hidden"></i>
-                  </button>
-                  <button class="sm:hidden text-2xl text-slate-700 dark:text-white" onclick="closemenu()" aria-label="Close menu"><i class="fa-solid fa-circle-xmark"></i></button>
-                </div>
-            </ul>
-            <button class="sm:hidden text-2xl" onclick="openmenu()" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+            <button class="sm:hidden text-2xl z-50 relative" onclick="openmenu()" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
         </nav>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 sm:hidden" onclick="closemenu()"></div>
+    
+    <!-- Mobile Menu -->
+    <ul id="sidemenu" class="fixed top-0 right-0 h-full w-3/4 max-w-sm sm:hidden bg-white dark:bg-neutral-900 p-6 flex flex-col gap-6 translate-x-full transition-transform duration-300 z-50 shadow-2xl">
+        <div class="flex items-center justify-between mb-8">
+            <a href="#header" class="text-xl font-extrabold tracking-tight">
+              <span class="text-slate-900 dark:text-white">Sam</span><span class="text-brand">wumi</span><span class="text-slate-900 dark:text-white">.</span>
+            </a>
+            <button onclick="closemenu()" aria-label="Close menu" class="text-2xl text-slate-700 dark:text-white hover:text-slate-900 dark:hover:text-white">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <li><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium py-2" href="#header" onclick="closemenu()">Home</a></li>
+        <li><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium py-2" href="#about-me" onclick="closemenu()">About</a></li>
+        <li><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium py-2" href="#services" onclick="closemenu()">Services</a></li>
+        <li><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium py-2" href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+        <li><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium py-2" href="#contact" onclick="closemenu()">Contact</a></li>
+        <div class="flex items-center gap-4 mt-auto pt-8 border-t border-slate-200 dark:border-neutral-700">
+            <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition" aria-label="Toggle theme" aria-pressed="false">
+                <i id="icon-sun" class="fa-solid fa-sun"></i>
+                <i id="icon-moon" class="fa-solid fa-moon hidden"></i>
+            </button>
+        </div>
+    </ul>
+    
+    <!-- Desktop Menu -->
+    <div class="hidden sm:flex items-center gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4">
+        <a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#header">Home</a>
+        <a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#about-me">About</a>
+        <a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#services">Services</a>
+        <a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#portfolio">Portfolio</a>
+        <a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#contact">Contact</a>
+        <button id="theme-toggle-desktop" class="inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition ml-auto" aria-label="Toggle theme">
+            <i id="icon-sun-desktop" class="fa-solid fa-sun"></i>
+            <i id="icon-moon-desktop" class="fa-solid fa-moon hidden"></i>
+        </button>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="mt-20 sm:mt-28 lg:mt-40 max-w-3xl reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700">
             <p class="text-indigo-600 dark:text-brand font-semibold tracking-wide">Software Engineer</p>
             <h1 class="mt-3 text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
@@ -290,32 +317,68 @@
    <script>
      (function(){
        const btn = document.getElementById('theme-toggle');
+       const btnDesktop = document.getElementById('theme-toggle-desktop');
        const sun = document.getElementById('icon-sun');
        const moon = document.getElementById('icon-moon');
-       if (!btn) return;
+       const sunDesktop = document.getElementById('icon-sun-desktop');
+       const moonDesktop = document.getElementById('icon-moon-desktop');
+       
+       function updateIcons(isDark){
+         if (sun && moon){
+           if (isDark){
+             sun.classList.add('hidden');
+             moon.classList.remove('hidden');
+           } else {
+             sun.classList.remove('hidden');
+             moon.classList.add('hidden');
+           }
+         }
+         if (sunDesktop && moonDesktop){
+           if (isDark){
+             sunDesktop.classList.add('hidden');
+             moonDesktop.classList.remove('hidden');
+           } else {
+             sunDesktop.classList.remove('hidden');
+             moonDesktop.classList.add('hidden');
+           }
+         }
+       }
+       
        function setTheme(mode){
          if (mode === 'dark'){
            document.documentElement.classList.add('dark');
            localStorage.setItem('theme','dark');
-           sun.classList.add('hidden');
-           moon.classList.remove('hidden');
-           btn.setAttribute('aria-pressed','true');
+           updateIcons(true);
+           if (btn) btn.setAttribute('aria-pressed','true');
+           if (btnDesktop) btnDesktop.setAttribute('aria-pressed','true');
          } else {
            document.documentElement.classList.remove('dark');
            localStorage.setItem('theme','light');
-           sun.classList.remove('hidden');
-           moon.classList.add('hidden');
-           btn.setAttribute('aria-pressed','false');
+           updateIcons(false);
+           if (btn) btn.setAttribute('aria-pressed','false');
+           if (btnDesktop) btnDesktop.setAttribute('aria-pressed','false');
          }
        }
+       
        function init(){
          const stored = localStorage.getItem('theme');
          if (stored === 'dark') setTheme('dark'); else setTheme('light');
        }
-       btn.addEventListener('click', function(){
-         const isDark = document.documentElement.classList.contains('dark');
-         setTheme(isDark ? 'light' : 'dark');
-       });
+       
+       if (btn) {
+         btn.addEventListener('click', function(){
+           const isDark = document.documentElement.classList.contains('dark');
+           setTheme(isDark ? 'light' : 'dark');
+         });
+       }
+       
+       if (btnDesktop) {
+         btnDesktop.addEventListener('click', function(){
+           const isDark = document.documentElement.classList.contains('dark');
+           setTheme(isDark ? 'light' : 'dark');
+         });
+       }
+       
        init();
      })();
    </script>

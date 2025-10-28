@@ -16,8 +16,8 @@ function opentab(tabName, event){
     }
 }
 
-const sideMenu = document.getElementById('sidemenu')
-const menuOverlay = document.getElementById('menu-overlay')
+const sideMenu = document.getElementById('sidemenu');
+const menuOverlay = document.getElementById('menu-overlay');
 
 function openmenu(){
     if (!sideMenu) return;
