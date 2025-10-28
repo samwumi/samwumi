@@ -45,19 +45,20 @@
     <style>html{scroll-behavior:smooth} :root{color-scheme:dark}</style>
    
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-neutral-950 dark:text-white antialiased font-sans transition-colors duration-300" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
+<body class="bg-slate-50 text-slate-900 dark:bg-neutral-950 dark:text-white antialiased font-sans transition-colors duration-300 overflow-x-hidden max-w-full" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
    <header id="header" class="w-full min-h-screen bg-no-repeat bg-contain bg-[position:70%_center] bg-[url('https://samwumi-d4576.web.app/images/myimage.png')] scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <nav class="flex items-center justify-between sticky top-0 z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-950/60 py-4 transition-colors">
-            <a href="#header" class="inline-flex items-center gap-2 text-xl sm:text-2xl font-extrabold tracking-tight">
+        <nav class="flex items-center justify-between sticky top-0 z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-950/60 py-4 transition-colors max-w-full overflow-x-hidden">
+            <a href="#header" class="inline-flex items-center gap-2 text-xl sm:text-2xl font-extrabold tracking-tight whitespace-nowrap">
               <span class="text-slate-900 dark:text-white">Sam</span><span class="text-brand">wumi</span><span class="text-slate-900 dark:text-white">.</span>
             </a>
-            <ul id="sidemenu" class="fixed sm:static top-0 right-0 h-screen sm:h-auto w-64 sm:w-auto bg-white dark:bg-neutral-900 sm:bg-transparent p-8 sm:p-0 flex sm:flex-row flex-col gap-6 sm:gap-8 items-start sm:items-center translate-x-full sm:translate-x-0 transition-transform duration-300 z-50">
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#header">Home</a></li>
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#about-me">About</a></li>
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#services">Services</a></li>
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#portfolio">Portfolio</a></li>
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#contact">Contact</a></li>
+            <div id="menu-overlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 sm:hidden" onclick="closemenu()"></div>
+            <ul id="sidemenu" class="fixed sm:static top-0 right-0 h-screen sm:h-auto w-64 sm:w-auto bg-white dark:bg-neutral-900 sm:bg-transparent p-8 sm:p-0 flex sm:flex-row flex-col gap-6 sm:gap-8 items-start sm:items-center translate-x-full sm:translate-x-0 transition-transform duration-300 z-50 sm:max-w-none overflow-hidden">
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#header" onclick="closemenu()">Home</a></li>
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#about-me" onclick="closemenu()">About</a></li>
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#services" onclick="closemenu()">Services</a></li>
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#contact" onclick="closemenu()">Contact</a></li>
                 <div class="flex items-center gap-4 mt-auto sm:mt-0">
                   <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition" aria-label="Toggle theme" aria-pressed="false">
                     <i id="icon-sun" class="fa-solid fa-sun"></i>

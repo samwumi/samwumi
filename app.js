@@ -17,17 +17,28 @@ function opentab(tabName, event){
 }
 
 const sideMenu = document.getElementById('sidemenu')
+const menuOverlay = document.getElementById('menu-overlay')
 
 function openmenu(){
     if (!sideMenu) return;
     sideMenu.classList.remove('translate-x-full');
     sideMenu.classList.add('translate-x-0');
+    if (menuOverlay) {
+        menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        menuOverlay.classList.add('opacity-100', 'pointer-events-auto');
+    }
+    document.body.style.overflow = 'hidden';
 }
 
 function closemenu(){
     if (!sideMenu) return;
     sideMenu.classList.add('translate-x-full');
     sideMenu.classList.remove('translate-x-0');
+    if (menuOverlay) {
+        menuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+        menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+    }
+    document.body.style.overflow = '';
 }
 
 
