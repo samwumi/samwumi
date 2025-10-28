@@ -53,18 +53,18 @@
               <span class="text-slate-900 dark:text-white">Sam</span><span class="text-brand">wumi</span><span class="text-slate-900 dark:text-white">.</span>
             </a>
             <div id="menu-overlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 sm:hidden" onclick="closemenu()"></div>
-            <ul id="sidemenu" class="fixed sm:static top-0 right-0 h-screen sm:h-auto w-64 sm:w-auto bg-white dark:bg-neutral-900 sm:bg-transparent p-8 sm:p-0 flex sm:flex-row flex-col gap-6 sm:gap-8 items-start sm:items-center translate-x-full sm:translate-x-0 transition-transform duration-300 z-50 sm:max-w-none overflow-hidden">
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#header" onclick="closemenu()">Home</a></li>
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#about-me" onclick="closemenu()">About</a></li>
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#services" onclick="closemenu()">Services</a></li>
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#portfolio" onclick="closemenu()">Portfolio</a></li>
-                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#contact" onclick="closemenu()">Contact</a></li>
-                <div class="flex items-center gap-4 mt-auto sm:mt-0">
+            <ul id="sidemenu" class="fixed sm:static top-0 right-0 h-screen sm:h-auto w-80 sm:w-auto bg-white dark:bg-neutral-900 sm:bg-transparent px-8 py-16 sm:p-0 flex sm:flex-row flex-col gap-8 sm:gap-8 justify-start items-start sm:items-center translate-x-full sm:translate-x-0 transition-transform duration-300 z-50 max-h-screen overflow-y-auto">
+                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#header" onclick="closemenu()">Home</a></li>
+                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#about-me" onclick="closemenu()">About</a></li>
+                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#services" onclick="closemenu()">Services</a></li>
+                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+                <li class="w-full sm:w-auto"><a class="block text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-lg font-medium" href="#contact" onclick="closemenu()">Contact</a></li>
+                <div class="flex items-center gap-4 mt-8 sm:mt-0 w-full sm:w-auto justify-start sm:justify-center">
                   <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition" aria-label="Toggle theme" aria-pressed="false">
                     <i id="icon-sun" class="fa-solid fa-sun"></i>
                     <i id="icon-moon" class="fa-solid fa-moon hidden"></i>
                   </button>
-                  <button class="sm:hidden text-2xl" onclick="closemenu()" aria-label="Close menu"><i class="fa-solid fa-circle-xmark"></i></button>
+                  <button class="sm:hidden text-2xl text-slate-700 dark:text-white" onclick="closemenu()" aria-label="Close menu"><i class="fa-solid fa-circle-xmark"></i></button>
                 </div>
             </ul>
             <button class="sm:hidden text-2xl" onclick="openmenu()" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
