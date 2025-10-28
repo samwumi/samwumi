@@ -1,48 +1,91 @@
 
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Samwumi | Portfolio</title>
+    <meta name="description" content="Portfolio of Alade Samuel (Samwumi) – Software Engineer, UI/UX designer, and web developer.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: { DEFAULT: '#ff004f' }
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      (function(){
+        try {
+          const stored = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const useDark = stored ? stored === 'dark' : false; // default light
+          if (useDark || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <script src="https://kit.fontawesome.com/077b97d0fa.js" crossorigin="anonymous"></script>
     <script src="app.js" defer></script>
    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>html{scroll-behavior:smooth} :root{color-scheme:dark}</style>
+   
 </head>
-<body>
-   <div id="header">
-    <div class="container">
-        <nav>
-            <h1 class="logo">Sam<span>wumi<span class="dot">.</span></span></h1>
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about-me">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+<body class="bg-slate-50 text-slate-900 dark:bg-neutral-950 dark:text-white antialiased font-sans transition-colors duration-300" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';">
+   <header id="header" class="w-full min-h-screen bg-no-repeat bg-contain bg-[position:70%_center] bg-[url('https://samwumi-d4576.web.app/images/myimage.png')] scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <nav class="flex items-center justify-between sticky top-0 z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-950/60 py-4 transition-colors">
+            <a href="#header" class="inline-flex items-center gap-2 text-xl sm:text-2xl font-extrabold tracking-tight">
+              <span class="text-slate-900 dark:text-white">Sam</span><span class="text-brand">wumi</span><span class="text-slate-900 dark:text-white">.</span>
+            </a>
+            <ul id="sidemenu" class="fixed sm:static top-0 right-0 h-screen sm:h-auto w-64 sm:w-auto bg-white dark:bg-neutral-900 sm:bg-transparent p-8 sm:p-0 flex sm:flex-row flex-col gap-6 sm:gap-8 items-start sm:items-center translate-x-full sm:translate-x-0 transition-transform duration-300 z-50">
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#header">Home</a></li>
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#about-me">About</a></li>
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#services">Services</a></li>
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#portfolio">Portfolio</a></li>
+                <li><a class="text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white text-base font-medium" href="#contact">Contact</a></li>
+                <div class="flex items-center gap-4 mt-auto sm:mt-0">
+                  <button id="theme-toggle" class="inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-700 hover:text-slate-900 dark:text-white/90 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition" aria-label="Toggle theme" aria-pressed="false">
+                    <i id="icon-sun" class="fa-solid fa-sun"></i>
+                    <i id="icon-moon" class="fa-solid fa-moon hidden"></i>
+                  </button>
+                  <button class="sm:hidden text-2xl" onclick="closemenu()" aria-label="Close menu"><i class="fa-solid fa-circle-xmark"></i></button>
+                </div>
             </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            <button class="sm:hidden text-2xl" onclick="openmenu()" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
         </nav>
-        <div class="header-text">
-            <p>Software Engineer</p>
-             <h1>Hi, I am <span>Alade</span><br>Samuel from Nigeria</h1>
+        <div class="mt-20 sm:mt-28 lg:mt-40 max-w-3xl reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700">
+            <p class="text-indigo-600 dark:text-brand font-semibold tracking-wide">Software Engineer</p>
+            <h1 class="mt-3 text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
+              Hi, I am <span class="text-brand">Alade</span><br>Samuel from Nigeria
+            </h1>
         </div>
     </div>
-   </div> 
+   </header> 
  <!-- .........About........ -->
-    <div id="about-me">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="https://samwumi-d4576.web.app/images/about-pic.png" alt="">
+   <section id="about-me" class="py-16 sm:py-24 text-slate-600 dark:text-gray-300 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-10 items-start justify-between">
+            <div class="basis-full md:basis-[35%] reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700" data-reveal-delay="100">
+                <img class="w-full rounded-xl bg-slate-200 dark:bg-neutral-800 object-cover shadow" src="https://samwumi-d4576.web.app/images/about-pic.png" alt="About me picture">
             </div>
-            <div class="about-col-2">
-               <h1 class="sub-title">About me</h1>
-               <p>
+            <div class="basis-full md:basis-[60%] reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700" data-reveal-delay="200">
+               <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white">About me</h2>
+               <p class="mt-6 leading-7">
 
                 Hello, I'm Alade Samuel, a passionate UI/UX designer and web developer with 4 years of professional experience. I have a strong love for creating intuitive and visually appealing user interfaces that seamlessly blend aesthetics with functionality.
                 
@@ -55,32 +98,32 @@
                 My goal is to create meaningful and impactful digital experiences that leave a lasting impression on users. Whether it's a website, web application, or mobile app, I'm dedicated to crafting elegant designs and efficient code that enhance usability and drive results.
                 
                 Let's work together to bring your ideas to life and create exceptional digital experiences that make a difference."</p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                <div class="flex gap-8 mt-6 mb-10">
+                    <button class="tab-link text-base font-medium text-slate-900 dark:text-white border-b-2 border-indigo-600 dark:border-brand pb-2" onclick="opentab('skills', event)">Skills</button>
+                    <button class="tab-link text-base font-medium text-slate-600 hover:text-slate-900 dark:text-white/70 dark:hover:text-white pb-2" onclick="opentab('experience', event)">Experience</button>
+                    <button class="tab-link text-base font-medium text-slate-600 hover:text-slate-900 dark:text-white/70 dark:hover:text-white pb-2" onclick="opentab('education', event)">Education</button>
                 </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
-                        <li><span>Web Development</span><br>Web app Development</li>
-                        <li><span>Digital Marketing</span><br>Helping businesses to have effective online presence</li>
+                <div id="skills" class="tab-panel">
+                    <ul class="space-y-2">
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">UI/UX</span><br>Designing Web/App interfaces</li>
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">Web Development</span><br>Web app Development</li>
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">Digital Marketing</span><br>Helping businesses to have effective online presence</li>
                     </ul>
                 </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2022 - Current </span><br>Web designer and developer at Digital Career Academy, Galway, Ireland</li>
-                        <li><span>2022 - Current </span><br>Web designer and developer at SCMAS</li>
-                        <li><span>2021 - 2022 </span><br>Web Developer at Delsmy Academy</li>
-                        <li><span>2019 - 2022</span><br>Digital Marketing Consultant at Samadex Nigeria Limited</li>
+                <div id="experience" class="tab-panel hidden">
+                    <ul class="space-y-2">
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">2022 - Current </span><br>Web designer and developer at Digital Career Academy, Galway, Ireland</li>
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">2022 - Current </span><br>Web designer and developer at SCMAS</li>
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">2021 - 2022 </span><br>Web Developer at Delsmy Academy</li>
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">2019 - 2022</span><br>Digital Marketing Consultant at Samadex Nigeria Limited</li>
                     </ul>
                 </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                         <li><span>2023</span><br>Backend Developer Certificate at Meta</li>
-                        <li><span>2019</span><br>UI/UX at Side Hustle</li>
-                        <li><span>2021</span><br>Web development training at Delsmy Academy</li>
-                        <li><span>2017</span><br>B.Sc at Obafemi Awolowo University</li>
+                <div id="education" class="tab-panel hidden">
+                    <ul class="space-y-2">
+                         <li><span class="text-indigo-600 dark:text-brand font-semibold">2023</span><br>Backend Developer Certificate at Meta</li>
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">2019</span><br>UI/UX at Side Hustle</li>
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">2021</span><br>Web development training at Delsmy Academy</li>
+                        <li><span class="text-indigo-600 dark:text-brand font-semibold">2017</span><br>B.Sc at Obafemi Awolowo University</li>
                     </ul>
                 </div>
             </div>
@@ -88,146 +131,218 @@
     </div>
    </div>
    <!-- ..........Services.............. -->
-   <div id="services">
-    <h1 class="sub-title">My Services</h1>
-    <div class="services-list">
-        <div>
-            <i class="fa-solid fa-code"></i>
-            <h1>Web Development</h1>
-            <p>Embark on your web development journey with me. I'm a passionate web developer specializing in crafting exceptional websites that make an impact. 
+   <section id="services" class="py-16 sm:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white">My Services</h2>
+        <div class="grid gap-6 sm:gap-8 mt-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-xl bg-white dark:bg-neutral-900 p-6 shadow hover:shadow-lg transition reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700" data-reveal-delay="0">
+            <i class="fa-solid fa-code text-4xl text-indigo-600 dark:text-white"></i>
+            <h3 class="mt-4 text-2xl font-semibold">Web Development</h3>
+            <p class="mt-3 text-sm text-gray-300 leading-6">Embark on your web development journey with me. I'm a passionate web developer specializing in crafting exceptional websites that make an impact. 
                 
                 Explore my budding portfolio, showcasing my skills in creating customized solutions that reflect your unique brand identity. From stunning design to seamless functionality, I'll bring your vision to life.
                 
                 Let's collaborate on your upcoming project and kickstart your online presence. Join me on this exciting web development adventure. Visit my portfolio today!</p>
-                <a href="#">Learn more</a>
+            <a class="inline-block mt-4 text-sm text-indigo-600 hover:text-indigo-700 dark:text-white dark:hover:text-brand transform-gpu motion-safe:transition motion-safe:duration-200 hover:shadow hover:-translate-y-0.5" href="#">Learn more</a>
         </div>
-        <div>
-            <i class="fa-solid fa-crop"></i>
-            <h1>UI/UX</h1>
-            <p> Welcome to my UI/UX design portfolio, where I bring creativity and user-centric design together to deliver exceptional digital experiences. 
+        <div class="rounded-xl bg-white dark:bg-neutral-900 p-6 shadow hover:shadow-lg transition reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700" data-reveal-delay="100">
+            <i class="fa-solid fa-crop text-4xl text-indigo-600 dark:text-white"></i>
+            <h3 class="mt-4 text-2xl font-semibold">UI/UX</h3>
+            <p class="mt-3 text-sm text-gray-300 leading-6"> Welcome to my UI/UX design portfolio, where I bring creativity and user-centric design together to deliver exceptional digital experiences. 
                 
                 Discover my passion for crafting intuitive and visually captivating interfaces that leave a lasting impression. From wireframes to interactive prototypes, I specialize in creating seamless user journeys that engage and delight.
                 
                 Browse through my evolving portfolio, showcasing my expertise in understanding user needs and translating them into elegant design solutions. Together, we can create user experiences that elevate your brand and drive meaningful interactions.
                 zd
                 Let's collaborate on your next UI/UX project and embark on a journey of innovative design. Join me in shaping the future of digital experiences. Explore my portfolio today!</p>
-                <a href="#">Learn more</a>
+            <a class="inline-block mt-4 text-sm text-indigo-600 hover:text-indigo-700 dark:text-white dark:hover:text-brand transform-gpu motion-safe:transition motion-safe:duration-200 hover:shadow hover:-translate-y-0.5" href="#">Learn more</a>
         </div>
-        <div>
-            <i class="fa-solid fa-envelopes-bulk"></i>
-            <h1>Digital Marketing</h1>
-            <p>Step into the world of digital marketing with me as your guide. I'm a dedicated digital marketer, ready to help your brand thrive in the online landscape.
+        <div class="rounded-xl bg-white dark:bg-neutral-900 p-6 shadow hover:shadow-lg transition reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700" data-reveal-delay="200">
+            <i class="fa-solid fa-envelopes-bulk text-4xl text-indigo-600 dark:text-white"></i>
+            <h3 class="mt-4 text-2xl font-semibold">Digital Marketing</h3>
+            <p class="mt-3 text-sm text-gray-300 leading-6">Step into the world of digital marketing with me as your guide. I'm a dedicated digital marketer, ready to help your brand thrive in the online landscape.
                 
                 Explore my portfolio and discover how I've successfully executed data-driven marketing strategies to drive growth and boost brand visibility. From social media campaigns to SEO optimization, I specialize in leveraging digital channels to reach and engage your target audience.
                 
                 With a focus on measurable results, I'll tailor customized marketing solutions to suit your unique business objectives. Let's collaborate on your next digital marketing venture and unlock new opportunities for your brand.
                 
                 Don't miss out on the chance to elevate your online presence. Visit my portfolio today and let's shape your digital success story together!</p>
-                <a href="#">Learn more</a>
+            <a class="inline-block mt-4 text-sm text-indigo-600 hover:text-indigo-700 dark:text-white dark:hover:text-brand transform-gpu motion-safe:transition motion-safe:duration-200 hover:shadow hover:-translate-y-0.5" href="#">Learn more</a>
         </div>
+      </div>
     </div>
-   </div>
+   </section>
 
    <!-- ........portfolio.......... -->
 
-   <div id="portfolio">
-    <div class="container">
-        <h1 class="sub-title">My Work</h1>
-        <div class="work-list">
-            <div class="work">
-                <img src="images/blog.jpg" alt="">
-                <div class="layer">
-                    <h3>Blog</h3>
-                    <p>A blog website aimed at educating readers on Bitcoin</p>
-                    <a href="https://satoshisjournal.com/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+   <section id="portfolio" class="py-16 sm:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white">My Work</h2>
+        <div class="grid gap-6 sm:gap-8 mt-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="work group relative rounded-xl overflow-hidden transform-gpu will-change-transform motion-safe:transition motion-safe:duration-300 motion-safe:hover:-translate-y-1 reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:duration-700" data-reveal-delay="0">
+                <img class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105" src="images/blog.jpg" alt="Blog project">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-6">
+                    <div>
+                      <h3 class="text-2xl font-semibold mb-2">Blog</h3>
+                      <p class="text-sm">A blog website aimed at educating readers on Bitcoin</p>
+                      <a class="inline-flex items-center justify-center mt-4 w-12 h-12 rounded-full bg-white text-brand" href="https://satoshisjournal.com/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/comic.jpg" alt="">
-                <div class="layer">
-                    <h3>Cryptocomics</h3>
-                    <p>A cryptocomics lab website aimed at teaching people the cryptocurrency business through comic article and images</p>
-                    <a href="http://cryptocomicslab.com" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="work group relative rounded-xl overflow-hidden transform-gpu will-change-transform motion-safe:transition motion-safe:duration-300 motion-safe:hover:-translate-y-1 reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:duration-700" data-reveal-delay="100">
+                <img class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105" src="images/comic.jpg" alt="Cryptocomics project">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-6">
+                    <div>
+                      <h3 class="text-2xl font-semibold mb-2">Cryptocomics</h3>
+                      <p class="text-sm">A cryptocomics lab website aimed at teaching people the cryptocurrency business through comic article and images</p>
+                      <a class="inline-flex items-center justify-center mt-4 w-12 h-12 rounded-full bg-white text-brand" href="http://cryptocomicslab.com" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/landing.jpg" alt="">
-                <div class="layer">
-                    <h3>A landing Page</h3>
-                    <p>A home service business website that highlights various services the business offers and their pricing</p>
-                    <a href="https://reviveservices.ca/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="work group relative rounded-xl overflow-hidden transform-gpu will-change-transform motion-safe:transition motion-safe:duration-300 motion-safe:hover:-translate-y-1 reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:duration-700" data-reveal-delay="200">
+                <img class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105" src="images/landing.jpg" alt="Landing page project">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-6">
+                    <div>
+                      <h3 class="text-2xl font-semibold mb-2">A landing Page</h3>
+                      <p class="text-sm">A home service business website that highlights various services the business offers and their pricing</p>
+                      <a class="inline-flex items-center justify-center mt-4 w-12 h-12 rounded-full bg-white text-brand" href="https://reviveservices.ca/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/academy.jpg" alt="">
-                <div class="layer">
-                    <h3>Online Education Website</h3>
-                    <p>Online Education website that teaches in-demand tech skills across 3 continents</p>
-                    <a href="https://digitalcareers.academy" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="work group relative rounded-xl overflow-hidden transform-gpu will-change-transform motion-safe:transition motion-safe:duration-300 motion-safe:hover:-translate-y-1 reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:duration-700" data-reveal-delay="300">
+                <img class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105" src="images/academy.jpg" alt="Online Education Website">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-6">
+                    <div>
+                      <h3 class="text-2xl font-semibold mb-2">Online Education Website</h3>
+                      <p class="text-sm">Online Education website that teaches in-demand tech skills across 3 continents</p>
+                      <a class="inline-flex items-center justify-center mt-4 w-12 h-12 rounded-full bg-white text-brand" href="https://digitalcareers.academy" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="https://img.freepik.com/premium-photo/white-o-with-dot-path-wooden-block-cube-business-strategic-planing-sport-tactic-achieve-goal-target-concept_50039-4459.jpg?size=626&ext=jpg&uid=R59445574&ga=GA1.2.1962933015.1689386043&semt=ais" alt="">
-                <div class="layer">
-                    <h3>A Tic-Tac Game</h3>
-                    <p>A tic-tac game built with HTML, CSS and JavaScript</p>
-                    <a href="https://samwumi.github.io/webgames/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="work group relative rounded-xl overflow-hidden transform-gpu will-change-transform motion-safe:transition motion-safe:duration-300 motion-safe:hover:-translate-y-1 reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:duration-700" data-reveal-delay="400">
+                <img class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105" src="https://img.freepik.com/premium-photo/white-o-with-dot-path-wooden-block-cube-business-strategic-planing-sport-tactic-achieve-goal-target-concept_50039-4459.jpg?size=626&ext=jpg&uid=R59445574&ga=GA1.2.1962933015.1689386043&semt=ais" alt="Tic-Tac Game">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-6">
+                    <div>
+                      <h3 class="text-2xl font-semibold mb-2">A Tic-Tac Game</h3>
+                      <p class="text-sm">A tic-tac game built with HTML, CSS and JavaScript</p>
+                      <a class="inline-flex items-center justify-center mt-4 w-12 h-12 rounded-full bg-white text-brand" href="https://samwumi.github.io/webgames/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/lotto.jpg" alt="">
-                <div class="layer">
-                    <h3>A Lotto Website</h3>
-                    <p>A centralized hub that seamlessly combines multiple lotto websites, offering users a one-stop destination for accessing diverse lotto services.</p>
-                    <a href="https://expressforecast.com/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="work group relative rounded-xl overflow-hidden transform-gpu will-change-transform motion-safe:transition motion-safe:duration-300 motion-safe:hover:-translate-y-1 reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:duration-700" data-reveal-delay="500">
+                <img class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105" src="images/lotto.jpg" alt="Lotto Website">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-6">
+                    <div>
+                      <h3 class="text-2xl font-semibold mb-2">A Lotto Website</h3>
+                      <p class="text-sm">A centralized hub that seamlessly combines multiple lotto websites, offering users a one-stop destination for accessing diverse lotto services.</p>
+                      <a class="inline-flex items-center justify-center mt-4 w-12 h-12 rounded-full bg-white text-brand" href="https://expressforecast.com/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="work">
-                <img src="images/lms.jpg" alt="">
-                <div class="layer">
-                    <h3>Church LMS</h3>
-                    <p>An integrated Learning Management System (LMS) tailored for churches, fostering seamless education, collaboration, and engagement within the spiritual community.</p>
-                    <a href="https://cozainternship.coza.org.ng/yc/#//" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <div class="work group relative rounded-xl overflow-hidden transform-gpu will-change-transform motion-safe:transition motion-safe:duration-300 motion-safe:hover:-translate-y-1 reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:duration-700" data-reveal-delay="600">
+                <img class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105" src="images/lms.jpg" alt="Church LMS">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand/80 to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-6">
+                    <div>
+                      <h3 class="text-2xl font-semibold mb-2">Church LMS</h3>
+                      <p class="text-sm">An integrated Learning Management System (LMS) tailored for churches, fostering seamless education, collaboration, and engagement within the spiritual community.</p>
+                      <a class="inline-flex items-center justify-center mt-4 w-12 h-12 rounded-full bg-white text-brand" href="https://cozainternship.coza.org.ng/yc/#//" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
             </div>
-    
         </div>
-        <a href="a" id="see-more" class="btn">See more</a>
+        <div class="text-center">
+          <a href="a" id="see-more" class="inline-block mt-10 px-8 py-3 rounded-md border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white dark:border-brand dark:text-white dark:hover:bg-brand transform-gpu motion-safe:transition motion-safe:duration-200 hover:shadow hover:-translate-y-0.5">See more</a>
+        </div>
     </div>
-   </div>
+   </section>
 
    <!-- ..........contact............. -->
-   <div id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-regular fa-paper-plane"></i>samwumi91@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i>08039281641</p>
-                <div class="social-icons">
-                   <a href="https://www.facebook.com/SamWumiDigitals" target="_blank"><i class="fa-brands fa-facebook"></i></a> 
-                    <a href="http://www.linkedin.com/in/adewumi-alade" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+   <section id="contact" class="pt-16 sm:pt-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap gap-10 items-start justify-between">
+            <div class="basis-full md:basis-[35%] reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700" data-reveal-delay="0">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white">Contact Me</h2>
+                <p class="mt-6"><i class="fa-regular fa-paper-plane text-indigo-600 dark:text-brand mr-3"></i>samwumi91@gmail.com</p>
+                <p class="mt-2"><i class="fa-solid fa-phone text-indigo-600 dark:text-brand mr-3"></i>08039281641</p>
+                <div class="mt-6 space-x-4 text-2xl">
+                   <a class="text-gray-400 hover:text-brand" href="https://www.facebook.com/SamWumiDigitals" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a> 
+                    <a class="text-gray-400 hover:text-brand" href="http://www.linkedin.com/in/adewumi-alade" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a class="text-gray-400 hover:text-brand" href="#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <a href="https://drive.google.com/file/d/1gue5VJu86J2H7zvcjAiMLQh6bzDglYnp/view?usp=drive_link" target="_blank" class="btn btn2" rel="noopener noreferrer"  Download>Download CV</a>
+                <a href="https://drive.google.com/file/d/1gue5VJu86J2H7zvcjAiMLQh6bzDglYnp/view?usp=drive_link" target="_blank" rel="noopener noreferrer" download class="inline-block mt-6 px-8 py-3 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-brand dark:hover:opacity-90 transform-gpu motion-safe:transition motion-safe:duration-200 hover:shadow hover:-translate-y-0.5">Download CV</a>
             </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="text" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="" class="btn btn2">Submit</button>
+            <div class="basis-full md:basis-[60%] reveal motion-safe:opacity-0 motion-safe:translate-y-4 motion-safe:transition motion-safe:duration-700" data-reveal-delay="150">
+                <form name="submit-to-google-sheet" class="w-full">
+                    <input class="w-full rounded-md bg-white dark:bg-neutral-900 border border-slate-200 dark:border-transparent px-4 py-3 mt-4 text-slate-900 placeholder-slate-500 dark:text-white dark:placeholder-white/60 outline-none transition-colors" type="text" name="Name" placeholder="Your Name" required>
+                    <input class="w-full rounded-md bg-white dark:bg-neutral-900 border border-slate-200 dark:border-transparent px-4 py-3 mt-4 text-slate-900 placeholder-slate-500 dark:text-white dark:placeholder-white/60 outline-none transition-colors" type="text" name="Email" placeholder="Your Email" required>
+                    <textarea class="w-full rounded-md bg-white dark:bg-neutral-900 border border-slate-200 dark:border-transparent px-4 py-3 mt-4 text-slate-900 placeholder-slate-500 dark:text-white dark:placeholder-white/60 outline-none transition-colors" name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="inline-block mt-4 px-8 py-3 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-brand dark:hover:opacity-90 transform-gpu motion-safe:transition motion-safe:duration-200 hover:shadow hover:-translate-y-0.5">Submit</button>
                 </form>
-                <span id="msg"></span>
+                <span id="msg" class="block mt-2 text-emerald-500"></span>
             </div>
         </div>
     </div>
-    <div class="copyright">
-        <p>Copyright &copy; Samwumi. Made with <i class="fa-solid fa-heart"></i> by Samwumi Digitals</p>
+    <div class="mt-10 w-full text-center py-6 bg-slate-100 dark:bg-neutral-900 transition-colors">
+        <p class="text-slate-700 dark:text-white">Copyright &copy; Samwumi. Made with <i class="fa-solid fa-heart text-brand"></i> by Samwumi Digitals</p>
     </div>
-   </div>
+   </section>
+   <script>
+     (function(){
+       const btn = document.getElementById('theme-toggle');
+       const sun = document.getElementById('icon-sun');
+       const moon = document.getElementById('icon-moon');
+       if (!btn) return;
+       function setTheme(mode){
+         if (mode === 'dark'){
+           document.documentElement.classList.add('dark');
+           localStorage.setItem('theme','dark');
+           sun.classList.add('hidden');
+           moon.classList.remove('hidden');
+           btn.setAttribute('aria-pressed','true');
+         } else {
+           document.documentElement.classList.remove('dark');
+           localStorage.setItem('theme','light');
+           sun.classList.remove('hidden');
+           moon.classList.add('hidden');
+           btn.setAttribute('aria-pressed','false');
+         }
+       }
+       function init(){
+         const stored = localStorage.getItem('theme');
+         if (stored === 'dark') setTheme('dark'); else setTheme('light');
+       }
+       btn.addEventListener('click', function(){
+         const isDark = document.documentElement.classList.contains('dark');
+         setTheme(isDark ? 'light' : 'dark');
+       });
+       init();
+     })();
+   </script>
+   <script>
+     (function(){
+       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+       if (prefersReduced) return;
+       const revealEls = document.querySelectorAll('.reveal');
+       if (!revealEls.length) return;
+       const io = new IntersectionObserver((entries)=>{
+         entries.forEach(entry=>{
+           if (entry.isIntersecting){
+             const el = entry.target;
+             const delay = el.getAttribute('data-reveal-delay');
+             if (delay) el.style.transitionDelay = parseInt(delay,10)+'ms';
+             el.classList.remove('motion-safe:opacity-0','motion-safe:translate-y-4');
+             el.classList.add('motion-safe:opacity-100','motion-safe:translate-y-0');
+             io.unobserve(el);
+           }
+         })
+       }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+       revealEls.forEach(el=>io.observe(el));
+     })();
+   </script>
 </body>
 </html>
 
                      
+
+
 

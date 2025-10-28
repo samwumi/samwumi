@@ -1,27 +1,33 @@
-const tabContents = document.getElementsByClassName('tab-contents');
-const tabLinks = document.getElementsByClassName('tab-links')
+function opentab(tabName, event){
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    const tabButtons = document.querySelectorAll('.tab-link');
 
-function opentab(tabName){
-    for(tabLink of tabLinks){
-        tabLink.classList.remove('active-link')
+    tabPanels.forEach(panel => panel.classList.add('hidden'));
+    tabButtons.forEach(btn => {
+        btn.classList.remove('border-b-2','border-brand','text-white');
+        btn.classList.add('text-white/70');
+    });
+
+    const activePanel = document.getElementById(tabName);
+    if (activePanel) activePanel.classList.remove('hidden');
+    if (event && event.currentTarget){
+        event.currentTarget.classList.add('border-b-2','border-brand','text-white');
+        event.currentTarget.classList.remove('text-white/70');
     }
-
-    for(tabContent of tabContents){
-        tabContent.classList.remove('active-tab')
-    }
-
-    event.currentTarget.classList.add('active-link')
-    document.getElementById(tabName).classList.add('active-tab')
 }
 
 const sideMenu = document.getElementById('sidemenu')
 
 function openmenu(){
-    sideMenu.style.right = '0px'
+    if (!sideMenu) return;
+    sideMenu.classList.remove('translate-x-full');
+    sideMenu.classList.add('translate-x-0');
 }
 
 function closemenu(){
-    sideMenu.style.right = '-200px'
+    if (!sideMenu) return;
+    sideMenu.classList.add('translate-x-full');
+    sideMenu.classList.remove('translate-x-0');
 }
 
 
